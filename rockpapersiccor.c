@@ -1,19 +1,18 @@
 #include<stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
+#include<time.h>
 
 
 int gameResult(char computerChoice, char userChoice){
     if(computerChoice == userChoice){
         return 0; // match draw
     }
-    else if ((computerChoice == 's' && userChoice == 'c') || (computerChoice == 'c' && userChoice == 'p') || ( computerChoice == 'p' && userChoice == 's'))
+    else if ((computerChoice == 'r' && userChoice == 's') || (computerChoice == 's' && userChoice == 'p') || ( computerChoice == 'p' && userChoice == 'r'))
     {
         return -1; // computer won the game
     }
 
-    else if ((computerChoice == 'c' && userChoice == 's') || (computerChoice == 'p' && userChoice == 'c') || ( computerChoice == 's' && userChoice == 'p'))
+    else if ((computerChoice == 's' && userChoice == 'r') || (computerChoice == 'p' && userChoice == 's') || ( computerChoice == 'r' && userChoice == 'p'))
     {  
         return 1; // user won the game
     }  
@@ -21,11 +20,11 @@ int gameResult(char computerChoice, char userChoice){
 }
 
 void main(){
-    
     int n;
     char userChoice,computerChoice;
 
-    printf("Welcome to the Rock Paper Scissor game\n*******************************************\nType c for Scissor, p for paper and s for stone\n");
+    printf("Welcome to the Rock Paper Scissor game\n*******************************************\n");
+    printf("Type r for Rock, p for Paper and s for Scissor\n");
     printf("\nEnter your Choice: ");
     scanf("%c",&userChoice);
 
@@ -33,13 +32,13 @@ void main(){
     n= rand()%100;
 
     if(n<=33){
-        computerChoice = 's';
+        computerChoice = 'r';
     }
     else if (n>33 && n<=66){
         computerChoice = 'p';
     }
     else{
-        computerChoice = 'c';
+        computerChoice = 's';
     }
 
     printf("Computers Choice: %c",computerChoice);
@@ -56,5 +55,6 @@ void main(){
     else {
         printf("\n\nYou lost the game");
     }
+    
     
 }
