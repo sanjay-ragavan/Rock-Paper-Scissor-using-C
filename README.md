@@ -18,6 +18,3 @@ This is a simple command-line Rock, Paper, Scissors game written in C. The game 
     - **Draw** if both the user and computer select the same choice.
     - **User wins** if the user's choice beats the computer's choice.
     - **Computer wins** if the computer's choice beats the user's choice.
-
-## Example Usage
-
